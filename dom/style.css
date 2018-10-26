@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    border: 2px;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 5px solid red bold; 
+    text-align: center;
+
+}
+article>div{display: inline-block;
+    width: 80%;
+    height:100%;
+    color: red;
+    align-content: center;
+
+
+}
+button{
+    font-size: 20px;
+    align-content: center;
+
+}
