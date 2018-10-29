@@ -1,0 +1,27 @@
+body{
+    background: white;
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+}
+.blanca{
+    display: inline-block;
+    background: red;
+    height: 200px;
+    width: 50px;
+    border: 200px black;
+    margin-top: 200px;
+
+}
+.semi{
+    display: inline-block;
+    position: absolute;
+    background: black;
+    height: 125px;
+    width: 50px;
+    border: 200px;
+    margin-left: -32px;
+    margin-top: 200px;
+
+}
