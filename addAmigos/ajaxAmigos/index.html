@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <h1>AJAX</h1>
+
+    <h2>Face</h2>
+    <ul id="amigosface"></ul>
+
+    <button id="cargarbtnFace">Cargar amigos face</button>
+    <h2>Spoty</h2>
+    <ul id="amigosspoty"></ul>
+
+    
+    <button id="cargarbtnSpoty">Cargar amigos spoty</button>
+
+    <h2>Añadir</h2>
+    <section>
+            <div id="mensaje" class="error esconder">Usuario y contraseña no validos</div>
+            <form id="login" action="" method='POST' novalidate>
+                <div><input id="username" type="text" placeholder="Username" minlength="2" required>
+                    <div id="errorusername" class="error esconder">Completa el username</div>
+                </div>
+                <div><input  id="password" type="password" placeholder="Password" minlength="2" pattern="[a-zA-Z0-9]*" required>
+                    <div id="errorpassword" class="error esconder">Completa el password</div>
+                </div>
+                <div><button id="acceder">Acceder</button></div>
+            </form>
+        </section>
+
+    
+
+</body>
+<script src="./jquery-3.3.1.min.js"></script>
+<script src="./script.js"></script>
+</html>
