@@ -7,6 +7,7 @@ public class Usuario {
 	public String apellido;
 	public String email;
 	public int edad;
+	public Direccion dir;
 
 	// si empieza un metodo con un verbo resultara mas facil diferenciarlos
 	public String getDatosCompletos() {
