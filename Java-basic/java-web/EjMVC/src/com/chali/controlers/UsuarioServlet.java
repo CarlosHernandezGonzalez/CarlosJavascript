@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.chali.database.BBDD;
 import com.chali.modelos.Usuario;
-
 
 @WebServlet("/usuario") // la arroba indica la anotacion, indica un comportamiento en java, se comporta
 						// de diferentes manera de funcion de las anotaciones,indica en este caso cual
@@ -22,12 +22,16 @@ public class UsuarioServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String idUsuario=request.getParameter("id");
 
-		Usuario pepe = new Usuario(1, "pepe", "pepe@gmail.com", 32);
+		System.out.println("ID recibido"+ idUsuario);
+		int idU=Integer.parseInt(idUsuario);
+		//e usa para transformar un string en un entero
+		BBDD bbdd = new BBDD();// esta llamando al metodo BBDD
 
-		request.setAttribute("elUsuario", pepe);
-
-		request.getRequestDispatcher("./usuario.jsp").forward(request, response);
+		request.setAttribute("elUsuario", bbdd.getUsuarioById(idU));
+		
+		request.getRequestDispatcher("/usuario.jsp").forward(request, response);
 
 	}
 
@@ -35,5 +39,7 @@ public class UsuarioServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
+//PARA PODER OBTENER UN PROYECTO NUEVO, HAY QUE IMPORTARLO, EN FILE IMPORT BROWSE Y SE AÑADE
 
+	// PARA COMPARTIR COSAS HACER \\192.168.101.172\shared
 }

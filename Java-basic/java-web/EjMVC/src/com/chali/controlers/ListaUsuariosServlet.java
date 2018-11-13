@@ -8,30 +8,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chali.database.BBDD;
-import com.chali.modelos.Habitacion;
+import com.chali.modelos.Usuario;
 
-@WebServlet("/habitacion")
-public class habitacionServlet extends HttpServlet {
+@WebServlet("/listausuarios")
+public class ListaUsuariosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		BBDD bbdd=new BBDD();
-		
-		Habitacion especial =bbdd.habitaciones.get(0);
 
 		
+		
+		
+		BBDD bbdd = new BBDD();// esta llamando al metodo BBDD
+		request.setAttribute("losUsuarios", bbdd.usuarios);
 
-		request.setAttribute("laHabitacion", especial);
-
-		request.getRequestDispatcher("./habitacion.jsp").forward(request, response);
+		request.getRequestDispatcher("/listausuarios.jsp").forward(request, response);
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

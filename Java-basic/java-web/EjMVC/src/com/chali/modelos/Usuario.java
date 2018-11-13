@@ -1,28 +1,33 @@
 package com.chali.modelos;
+//cuando se acceda al server, no se debe acceder por la vista, osea el jsp, se debe acceder por
+
+//el servlet,porque sino no lo vamos a tener bien, ya que la vista esta asociada al servidor y no al reves
+
+//las propiedades de clase siempre van en minuscula, sino se tendra problemas con el expresion language.
 
 public class Usuario {
 	private int id;
 	private String nombre;
 	private String email;
-	private int numb;
+	private Habitacion hab;
 
-	public Usuario(int id, String nombre, String email, int numb) {
+	public Usuario(int id, String nombre, String email, Habitacion hab) {
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
-		this.numb = numb;
+		this.hab = hab;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public int getNumb() {
-		return numb;
+	public Habitacion getHab() {
+		return hab;
 	}
 
-	public void setNumb(int numb) {
-		this.numb = numb;
+	public void setHab(Habitacion Hab) {
+		this.hab = Hab;
 	}
 
 	public void setId(int id) {
