@@ -19,7 +19,9 @@ despues de descargar la libreria, copiamos lo descargado(archivo java), entramos
 <link href="./CSS/styles.css" rel="stylesheet">
 </head>
 <body>
-	<h1>THE PORN!</h1>
+	
+	<jsp:include page="./cabecera.jsp"></jsp:include>
+	
 	<ul>
 		${losUsuarios}
 		<!-- mostrara el array seguido. -->

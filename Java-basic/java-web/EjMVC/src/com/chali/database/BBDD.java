@@ -21,9 +21,9 @@ public class BBDD {
 	}
 
 	private boolean fillUsuarios() {
-		usuarios.add(new Usuario(1, "pepe", "a@p.es", null));
-		usuarios.add(new Usuario(2, "paco", "b@p.es", null));
-		usuarios.add(new Usuario(3, "yeah", "c@p.es", null));
+		usuarios.add(new Usuario(1, "pepe", "a@p.es", null, "ppp"));
+		usuarios.add(new Usuario(2, "paco", "b@p.es", null, "aaa"));
+		usuarios.add(new Usuario(3, "yeah", "c@p.es", null, "ccc"));
 
 		return true;
 
@@ -62,5 +62,35 @@ public class BBDD {
 		return usuarioADevolver;
 
 	}
+	public Habitacion getHabitacionByHid(int hid) {
+		Habitacion habitacionADevolver = null;
+
+
+		for (Habitacion unaHabitacion : habitaciones) {
+			if (unaHabitacion.getHid() == hid) {
+				habitacionADevolver = unaHabitacion;
+				break;
+			}
+		}
+
+		return habitacionADevolver;
+
+	}
+
+	public boolean existeUsuarioPorEmailYPass(String emailrec, String pass) {
+		boolean existeUsuario=false;
+		for (Usuario daleUser : this.usuarios) {
+			if(daleUser.getEmail().equals(emailrec) && daleUser.getPass().equals(pass) ) {
+				
+				existeUsuario= true;
+				break;
+			}
+		}
+		
+		return existeUsuario;
+		
+		
+	}
 
 }
+

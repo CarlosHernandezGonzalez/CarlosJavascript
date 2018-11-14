@@ -10,12 +10,22 @@ public class Usuario {
 	private String nombre;
 	private String email;
 	private Habitacion hab;
+	private String pass;
 
-	public Usuario(int id, String nombre, String email, Habitacion hab) {
+	public Usuario(int id, String nombre, String email, Habitacion hab, String pass) {
 		this.id = id;
 		this.nombre = nombre;
 		this.email = email;
 		this.hab = hab;
+		this.pass=pass;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 	public int getId() {

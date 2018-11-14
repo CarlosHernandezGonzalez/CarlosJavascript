@@ -18,4 +18,9 @@ ul{
 
 ul>li>a{
 	display: inline-block;margin: 1em;
+	
+}
+
+div.error{
+	color:red;
 }

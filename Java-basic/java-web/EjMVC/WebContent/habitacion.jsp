@@ -10,7 +10,8 @@
 <link href="./CSS/styles.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Datos de Habitacion</h1>
+	<jsp:include page="./cabecera.jsp"></jsp:include>
+	<h2>Datos de Habitacion</h2>
 	<ul>
 		<li>Id: ${laHabitacion.hid }</li>
 		<li>Calle: ${laHabitacion.calle }</li>
@@ -18,5 +19,8 @@
 		
 		
 	</ul>
+	
+	<button id= "volverbtn">volver</button>
+	<script src="./Js/script.js"></script>
 </body>
 </html>

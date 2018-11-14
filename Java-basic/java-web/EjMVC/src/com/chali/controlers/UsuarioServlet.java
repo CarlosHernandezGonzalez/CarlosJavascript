@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.chali.database.BBDD;
 import com.chali.modelos.Usuario;
@@ -22,18 +23,32 @@ public class UsuarioServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String idUsuario=request.getParameter("id");
 
 		System.out.println("ID recibido"+ idUsuario);
 		int idU=Integer.parseInt(idUsuario);
 		//e usa para transformar un string en un entero
-		BBDD bbdd = new BBDD();// esta llamando al metodo BBDD
-
-		request.setAttribute("elUsuario", bbdd.getUsuarioById(idU));
 		
-		request.getRequestDispatcher("/usuario.jsp").forward(request, response);
+		HttpSession session=request.getSession();
+		
+		//si existe el dato usuario en sersion ->lo dejo pasar
+		//si no lo redirijo a login
+		if (session.getAttribute("usuario")!=null) {  //el get tiene que tener el mismo nombre k el set, en este caso usuario
+			BBDD bbdd = new BBDD();// esta llamando al metodo BBDD
 
+			request.setAttribute("elUsuario", bbdd.getUsuarioById(idU));
+			
+			request.getRequestDispatcher("/usuario.jsp").forward(request, response);
+		}else {
+			response.sendRedirect("login");
+		}
+		
 	}
+	
+
+
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
